@@ -1,0 +1,32 @@
+def text_indentation(text):
+    """
+    Prints text with 2 new lines after ., ? and : characters.
+
+    Args:
+        text (str): The input text.
+
+    Raises:
+        TypeError: If text is not a string.
+
+    Examples:
+    >>> text_indentation("Hello. How are you?")
+    Hello
+    How are you
+    <BLANKLINE>
+
+    >>> text_indentation("This is a test: one, two. Another test? Yes.")
+    This is a test
+    one, two
+    Another test
+    Yes
+    <BLANKLINE>
+
+    >>> text_indentation("This: has no punctuation")
+    This: has no punctuation
+
+    >>> text_indentation(123)
+    Traceback (most recent call last):
+    TypeError: text must be a string
+    """
+    # Function implementation remains the same as provided
+    # ...

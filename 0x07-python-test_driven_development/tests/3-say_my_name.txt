@@ -1,0 +1,28 @@
+def say_my_name(first_name, last_name=""):
+    """
+    Prints the name in a specified format.
+
+    Args:
+        first_name (str): First name.
+        last_name (str): Last name (optional).
+
+    Raises:
+        TypeError: If first_name or last_name is not a string.
+
+    Examples:
+    >>> say_my_name("John", "Doe")
+    My name is John Doe
+
+    >>> say_my_name("Alice")
+    My name is Alice
+
+    >>> say_my_name(123)
+    Traceback (most recent call last):
+    TypeError: first_name must be a string or last_name must be a string
+
+    >>> say_my_name("Bob", 456)
+    Traceback (most recent call last):
+    TypeError: first_name must be a string or last_name must be a string
+    """
+    # Function implementation remains the same as provided
+    # ...
