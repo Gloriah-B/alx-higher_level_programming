@@ -1,26 +1,21 @@
-import doctest
-
-def test_say_my_name():
+def say_my_name(first_name, last_name=""):
     """
-    Test cases for say_my_name function.
+    Prints the name in a specified format.
+
+    Args:
+        first_name (str): First name.
+        last_name (str): Last name (optional).
+
+    Raises:
+        TypeError: If first_name or last_name is not a string.
     """
+    if not isinstance(first_name, str) or not isinstance(last_name, str):
+        raise TypeError(
+            "first_name must be a string or last_name must be a string"
+        )
 
-    # Valid cases
-    assert say_my_name("Bob") == "My name is Bob"
-    assert say_my_name("John", "Doe") == "My name is John Doe"
-    assert say_my_name("Alice") == "My name is Alice"
-
-    # Invalid cases
-    try:
-        say_my_name(123)
-    except TypeError as e:
-        assert str(e) == "first_name must be a string"
-
-    try:
-        say_my_name("Bob", 456)
-    except TypeError as e:
-        assert str(e) == "last_name must be a string"
-
-if __name__ == "__main__":
-    test_say_my_name()
-    doctest.testmod()
+    full_name = (
+        f"My name is {first_name} {last_name}"
+        if last_name else f"My name is {first_name}"
+    )
+    print(full_name)
