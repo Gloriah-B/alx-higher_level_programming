@@ -2,14 +2,14 @@
 """
 Module: file_reader
 
-This module provides functionality to read a text file and print its contents to stdout.
+Module reads a text file and print its contents to stdout
 """
 
 def read_file(filename=""):
     """
     Read File Function
 
-    Opens the specified text file (UTF-8 encoded) and prints its contents to stdout.
+    Opens specified text file (UTF-8 encoded) and prints to stdout
 
     Args:
     - filename (str): The path to the text file (default: "")
