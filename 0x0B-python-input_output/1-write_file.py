@@ -2,14 +2,15 @@
 """
 Module: file_writer
 
-This module provides functionality to write a string to a text file (UTF8) and returns the number of characters written.
+Module writes string to text file (UTF8) and returns no of characs written
 """
+
 
 def write_file(filename="", text=""):
     """
     Write File Function
 
-    Writes the provided text to a file (UTF-8 encoded) and returns the number of characters written.
+    Writes text to file (UTF-8 encoded) and returns no of xters written
 
     Args:
     - filename (str): The name of the text file (default: "")
