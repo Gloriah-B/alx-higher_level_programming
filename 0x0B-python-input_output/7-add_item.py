@@ -1,9 +1,11 @@
 #!/usr/bin/python3
 """
-Module: save_to_json_file
+Module: json_operations
 
-Module provides functionality to save Python objects as JSON in a file
+Provides functionality to save and load Python objects as JSON in a file.
 """
+
+
 import json
 
 
