@@ -1,4 +1,11 @@
 #!/usr/bin/python3
+"""
+Module: file_appender
+
+Module append string end of text file and return no of characs added
+"""
+
+
 def append_write(filename="", text=""):
     """
     Append Write Function
