@@ -5,6 +5,7 @@ Module: file_reader
 Module reads a text file and print its contents to stdout
 """
 
+
 def read_file(filename=""):
     """
     Read File Function
