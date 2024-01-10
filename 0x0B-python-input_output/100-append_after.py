@@ -2,7 +2,7 @@
 
 def append_after(filename="", search_string="", new_string=""):
     """
-    Append line of text after each line with specific string in a file
+    Append a line of text after each line with specific string in a file
 
     Args:
     - filename (str): Name of the file to modify.
@@ -13,18 +13,19 @@ def append_after(filename="", search_string="", new_string=""):
     - Uses the with statement to manage file handling.
     """
     try:
-        with open(filename, 'r') as file:
-            lines = file.readlines()
-    except FileNotFoundError:
-        return
+        file = open(filename, 'r')
+        lines = file.readlines()
+        file.close()
 
-    with open(filename, 'w') as file:
+        file = open(filename, 'w')
         for line in lines:
             file.write(line)
             if search_string in line:
                 file.write(new_string)
+        file.close()
+    except FileNotFoundError:
+        pass
 
 
 if __name__ == "__main__":
-    # Example usage:
     append_after("append_after_100.txt", "Python", "\"C is fun!\"\n")
