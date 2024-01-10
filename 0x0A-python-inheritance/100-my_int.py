@@ -1,3 +1,10 @@
+#!/usr/bin/python3
+
+"""
+This module defines a class called MyInt, inheriting from int.
+"""
+
+
 class MyInt(int):
     """
     A class representing a rebel integer, inheriting from int.
