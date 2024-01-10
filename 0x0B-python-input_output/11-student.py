@@ -22,3 +22,26 @@ class Student:
         if attrs is not None and all(isinstance(attr, str) for attr in attrs):
             return {k: v for k, v in self.__dict__.items() if k in attrs}
         return self.__dict__
+
+    def reload_from_json(self, json):
+        """
+        Replaces all attributes of the Student instance with a dictionary.
+
+        Assumes json will always be a dictionary where each key is a public
+        attribute name and each value is the value of the public attribute.
+        """
+        for key, value in json.items():
+            setattr(self, key, value)
+
+
+# Correct output - reload with json of Student("John", "Snow", 25)
+student = Student("John", "Snow", 25)
+json_data = student.to_json()
+student.reload_from_json(json_data)
+print(student.to_json())
+
+# Correct output - { 'firstname': "Kevin", 'lastname': "Mc Joe", 'age': 43 }
+student = Student("John", "Snow", 25)
+json_data = {'firstname': "Kevin", 'lastname': "Mc Joe", 'age': 43}
+student.reload_from_json(json_data)
+print(student.to_json())
