@@ -38,10 +38,12 @@ class Student:
 student = Student("John", "Snow", 25)
 json_data = student.to_json()
 student.reload_from_json(json_data)
-print(student.to_json())
+expected_output = {'first_name': 'John', 'last_name': 'Snow', 'age': 25}
+print(student.to_json() == expected_output)
+
 
 # Correct output - { 'firstname': "Kevin", 'lastname': "Mc Joe", 'age': 43 }
 student = Student("John", "Snow", 25)
-json_data = {'firstname': "Kevin", 'lastname': "Mc Joe", 'age': 43}
+json_data = {'first_name': "Kevin", 'last_name': "Mc Joe", 'age': 43}
 student.reload_from_json(json_data)
-print(student.to_json())
+print(student.to_json() == json_data)
