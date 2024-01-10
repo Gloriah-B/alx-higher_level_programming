@@ -18,4 +18,4 @@ def class_to_json(obj):
         return obj.__dict__
     else:
         # If obj is a class, return its attributes
-        return {key: value for key, value in obj.__dict__.items() if not callable(value)}
+        return {k: v for k, v in obj.__dict__.items() if not callable(v)}
