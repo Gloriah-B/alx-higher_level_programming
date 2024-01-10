@@ -1,17 +1,21 @@
 #!/usr/bin/python3
-"""Class to JSON module.
 
-Contains function to serialize class instance into JSON-compatible dict
-"""
+"""Module to convert class attributes to a JSON serializable dictionary."""
 
 
 def class_to_json(obj):
-    """Returns the dictionary description of object for JSON serialization
+    """
+    Convert attributes of an object to a JSON serializable dictionary.
 
     Args:
-        obj: The object to serialize.
+        obj: An instance of a Class.
 
     Returns:
-        dict: A dictionary reps of object suitable for JSON serialization
+        dict: A dictionary containing serializable attributes of the object.
     """
-    # Function implementation here
+    # Check if obj is an instance of a class
+    if not isinstance(obj, type):
+        return obj.__dict__
+    else:
+        # If obj is a class, return its attributes
+        return {key: value for key, value in obj.__dict__.items() if not callable(value)}
