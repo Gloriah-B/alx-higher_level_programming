@@ -1,31 +1,31 @@
 #!/usr/bin/python3
+"""
+Module tht insert line of text aftr each line containing specific string
+"""
+
 
 def append_after(filename="", search_string="", new_string=""):
     """
-    Append a line of text after each line with specific string in a file
+    Inserts line of text to file after each line containing a specific string
 
     Args:
-    - filename (str): Name of the file to modify.
-    - search_string (str): String to search for in each line of the file.
-    - new_string (str): String to append aftr each line with search_string
-
-    Note:
-    - Uses the with statement to manage file handling.
+        filename (str): The name of the file.
+        search_string (str): The specific string to search for in each line
+        new_string (str): The line of text to be inserted after each line
+        containing the search string
     """
     try:
-        file = open(filename, 'r')
-        lines = file.readlines()
-        file.close()
+        with open(filename, 'r') as file:
+            lines = file.readlines()
+    except FileNotFoundError:
+        # File doesn't exist, no need to append
+        return
 
-        file = open(filename, 'w')
+    with open(filename, 'w') as file:
         for line in lines:
             file.write(line)
             if search_string in line:
                 file.write(new_string)
-        file.close()
-    except FileNotFoundError:
-        pass
 
-
-if __name__ == "__main__":
-    append_after("append_after_100.txt", "Python", "\"C is fun!\"\n")
+# Example usage:
+# append_after("example.txt", "specific", "Inserted Line\n")
