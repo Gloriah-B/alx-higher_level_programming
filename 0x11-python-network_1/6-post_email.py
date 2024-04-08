@@ -1,6 +1,7 @@
 #!/usr/bin/python3
 """
-Script takes in URL and an email address, sends a POST request to the passed URL with the email as a parameter, then displays the body of the response."""
+Script takes in URL and an email address, sends a POST request to
+passed URL with the email as parameter, then displays body of response."""
 
 
 if __name__ == '__main__':

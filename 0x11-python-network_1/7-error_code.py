@@ -1,7 +1,7 @@
 #!/usr/bin/python3
 """
 Python script that sends a request to the URL and
-displays body of the response if there are no errors and 
+displays body of the response if there are no errors and
 error code when there is HTTP error.
 """
 import requests
